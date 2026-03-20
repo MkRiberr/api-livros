@@ -3,19 +3,19 @@ import os
 
 app = Flask(__name__)
 
-alunos = [
-    {"id": 1, "nome": "Sophia"},
-    {"id": 2, "nome": "Lacerda"},
-    {"id": 3, "nome": "Maxwell"},
+filmes = [
+    {"id": 1, "nome": "a republica"},
+    {"id": 2, "nome": "manifesto comunista"},
+    {"id": 3, "nome": "o amor nao é obvio"},
 ]
 
-@app.route("/alunos", methods=["GET"])
+@app.route("/filmes", methods=["GET"])
 def home():
-    return jsonify({"mensagem": "API de Alunos - Acesse /alunos"})
+    return jsonify({"mensagem": "API de Filme - Acesse /filmes"})
 
 @app.route("/", methods=["GET"])
-def listar_alunos():
-    return jsonify(alunos)
+def listar_filmes():
+    return jsonify(filmes)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT",5000))
